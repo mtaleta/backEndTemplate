@@ -1,0 +1,30 @@
+.gray-bg {
+  background-color: #f3f3f4;
+  min-height: 100%;
+  position: relative;
+}
+
+.login-card {
+  max-width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  margin-left: -200px;
+  background-color: #ffffff;
+  padding: 30px 20px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
+}
+
+.title {
+  /* background-image: url(../images/logo.png); */
+  background-repeat: no-repeat;
+  background-size: auto 50px;
+  font-size: 22px;
+  color: #3e454f;
+  text-indent: 170px;
+  font-weight: bold;
+  margin: 10px 0;
+  height: 70px;
+  padding-top: 16px;
+}

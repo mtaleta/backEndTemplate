@@ -1,0 +1,63 @@
+<div id="wrapper">
+  <header>
+    <div class="nologo"> 推播管理後台系統</div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>(0930401)</li>
+      <li>
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true">
+          <span id="showbox"></span>
+        </span>
+      </li>
+    </ul>
+  </header>
+  <nav class="navbar menu" style="margin-bottom: 0px; border: 0px;">
+    <div class="collapse navbar-collapse" style="padding-left:0px;">
+      <ul class="nav navbar-nav discollapse">
+        <li>
+          <a href="#">
+            <div>權限管理</div>
+            <div>Access Control</div>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLink]="[ '/mgt01/mgt010100' ]">
+                <div>人員群組管理</div>
+                <div>Group Management</div>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="[ '/mgt01/mgt010200' ]">
+                <div>群組功能管理 - 功能名稱編輯</div>
+                <div>Group Function Management - Function Name Editor</div>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="[ '/mgt01/mgt010300' ]">
+                <div>群組功能管理 - 群組功能管理</div>
+                <div>Group Function Management</div>
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="[ '/mgt01/mgt010400' ]">
+                <div>人員設定</div>
+                <div>Personal Setting</div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+            <a [routerLink]="[ '/login' ]">
+            <div>登出
+              <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+            </div>
+            <div>Sign out</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  <footer id="copyright" class="footer" style="position: absolute;">
+  </footer>
+</div>
