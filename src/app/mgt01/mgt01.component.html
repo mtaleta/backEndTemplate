@@ -1,63 +1,57 @@
 <div id="wrapper">
-  <header>
-    <div class="nologo"> 推播管理後台系統</div>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>(0930401)</li>
-      <li>
-        <span class="glyphicon glyphicon-calendar" aria-hidden="true">
-          <span id="showbox"></span>
-        </span>
-      </li>
-    </ul>
-  </header>
-  <nav class="navbar menu" style="margin-bottom: 0px; border: 0px;">
-    <div class="collapse navbar-collapse" style="padding-left:0px;">
-      <ul class="nav navbar-nav discollapse">
-        <li>
-          <a href="#">
-            <div>權限管理</div>
-            <div>Access Control</div>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a [routerLink]="[ '/mgt01/mgt010100' ]">
-                <div>人員群組管理</div>
-                <div>Group Management</div>
-              </a>
-            </li>
-            <li>
-              <a [routerLink]="[ '/mgt01/mgt010200' ]">
-                <div>群組功能管理 - 功能名稱編輯</div>
-                <div>Group Function Management - Function Name Editor</div>
-              </a>
-            </li>
-            <li>
-              <a [routerLink]="[ '/mgt01/mgt010300' ]">
-                <div>群組功能管理 - 群組功能管理</div>
-                <div>Group Function Management</div>
-              </a>
-            </li>
-            <li>
-              <a [routerLink]="[ '/mgt01/mgt010400' ]">
-                <div>人員設定</div>
-                <div>Personal Setting</div>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-            <a [routerLink]="[ '/login' ]">
-            <div>登出
-              <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-            </div>
-            <div>Sign out</div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <router-outlet></router-outlet>
-  <footer id="copyright" class="footer" style="position: absolute;">
+  <mat-toolbar class="bgmt">
+    <mat-toolbar-row>
+      <span class="nologo">推播管理後台系統</span>
+      <span class="spacer"></span>
+      <i class="material-icons iconClr">person</i>
+      <span class="textPad">(0930401)</span>
+      <i class="material-icons iconClr">calendar_today</i>
+      <span class="textPad">2018/08/01</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-toolbar>
+    <mat-toolbar-row class="row">
+      <button mat-button [matMenuTriggerFor]="accessControl">
+        <div>權限管理
+          <span class="jump">Access Control</span>
+        </div>
+      </button>
+      <mat-menu #accessControl="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item [routerLink]="[ '/mgt01/mgt010100' ]">
+          <div>人員群組管理
+            <span class="jump">Group Management</span>
+          </div>
+        </button>
+        <button mat-menu-item [routerLink]="[ '/mgt01/mgt010200' ]">
+          <div>群組功能管理 - 功能名稱編輯
+            <span class="jump">Group Function Management - Function Name Editor</span>
+          </div>
+        </button>
+        <button mat-menu-item [routerLink]="[ '/mgt01/mgt010300' ]">
+          <div>群組功能管理 - 群組功能管理
+            <span class="jump">Group Function Management</span>
+          </div>
+        </button>
+        <button mat-menu-item [routerLink]="[ '/mgt01/mgt010400' ]">
+          <div>人員設定
+            <span class="jump">Personal Setting</span>
+          </div>
+        </button>
+      </mat-menu>
+      <button mat-button [routerLink]="[ '/login' ]">
+        <div>登出
+          <i class="material-icons iconClr">exit_to_app</i>
+          <span class="jump">Sign out</span>
+        </div>
+
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="header">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer id="copyright">
   </footer>
 </div>

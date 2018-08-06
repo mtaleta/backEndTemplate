@@ -1,1 +1,67 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body {
+  /* 設定body高度為100% 拉到視窗可視的大小 */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding-top: 0px;
+  padding-bottom: 100px;
+  font-size: 14px;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+  padding: 8px;
+  line-height: 1.42857143;
+}
+
+.wrapper {
+  /* 設定高度最小為100%, 如果內容區塊很多, 可以長大 */
+  min-height: 100%;
+  /* 位置設為relative, 作為footer區塊位置的參考 */
+  position: relative;
+}
+
+.mat-table {
+  margin: 25px;
+}
+
+.btn-ft {
+  margin-bottom: 12px;
+  margin-right: 25px;
+  text-align: right;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: #f8f8f8;
+}
+
+.table-01 tbody>tr {
+  height: 65px;
+}
+
+.table-01 tbody>tr>th {
+  text-align: right;
+  white-space: nowrap;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  width: auto;
+  vertical-align: middle;
+}
+.table-01 tbody>tr>td{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-01 tbody>tr:first-child>td,
+.table-01 tbody>tr:first-child>th {
+  border-top: none;
+}

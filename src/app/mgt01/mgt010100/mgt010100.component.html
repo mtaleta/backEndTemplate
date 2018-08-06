@@ -1,3 +1,45 @@
-<p>
-  mgt010100 works!
-</p>
+<ol class="breadcrumb">
+  <span>權限管理</span>/
+  <span class="active">人員群組管理</span>
+</ol>
+
+<div class="btn-ft">
+  <button mat-stroked-button color="primary" [routerLink]="[ '.' ]">New Group Creation</button>
+</div>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Group ID </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Group Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="authorization">
+    <mat-header-cell *matHeaderCellDef> Authorization role (Checker /Maker) </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.authorization}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef> Create Date </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="creator">
+    <mat-header-cell *matHeaderCellDef> Creator </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.creator}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-stroked-button color="primary" [routerLink]="[ '.' ]">Edit</button>
+      <br>
+      <button mat-stroked-button color="primary" [routerLink]="[ '.' ]">User Group Assignment</button>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="['id', 'name', 'authorization', 'date', 'creator', 'action']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['id', 'name', 'authorization', 'date', 'creator', 'action']"></mat-row>
+</mat-table>

@@ -1,3 +1,92 @@
-<p>
-  mgt010400 works!
-</p>
+<ol class="breadcrumb">
+  <span>權限管理</span>/
+  <span class="active">人員設定</span>
+</ol>
+
+<div class="content">
+  <div role="tabpanel" class="tab-pane active" id="coupon">
+    <div class="search">
+      <table class="table-search">
+        <tr>
+          <th>Inquiry</th>
+          <td>
+            <ul>
+              <li>Select Group：
+                <mat-form-field>
+                  <mat-select [(value)]="selected">
+                    <mat-option value="">全部選擇</mat-option>
+                    <mat-option value="1">CR Manager</mat-option>
+                    <mat-option value="2">客服專員</mat-option>
+                    <mat-option value="3">系統審核主管</mat-option>
+                    <mat-option value="4">Systen Manager</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </li>
+              <li>User ID：
+                <mat-form-field class="example-form-field">
+                  <input matInput type="text" placeholder="User ID">
+                </mat-form-field>
+              </li>
+              <li>Status：
+                <mat-radio-group>
+                  <mat-radio-button value="1" color="primary" checked>正常(Active)&nbsp;</mat-radio-button>
+                  <mat-radio-button value="2" color="accent">鎖定(Locked)&nbsp;</mat-radio-button>
+                  <mat-radio-button value="3" color="warn">停權(Resignation)</mat-radio-button>
+                </mat-radio-group>
+              </li>
+            </ul>
+          </td>
+          <td>
+            <button mat-icon-button color="primary" [routerLink]="[  '.' ]">
+              <i class="material-icons">search</i>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="btn-ft">
+      <button mat-stroked-button color="primary" [routerLink]="[ '/mgt01/mgt010401' ]">New Creation</button>
+    </div>
+
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> User ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="group">
+        <mat-header-cell *matHeaderCellDef> User Group </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.group}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef> Last Login Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="update">
+        <mat-header-cell *matHeaderCellDef> Update Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.update}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="createDate">
+        <mat-header-cell *matHeaderCellDef> Create Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.createDate}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-stroked-button color="primary" [routerLink]="[ '/mgt01/mgt010401' ]">Edit</button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="['id', 'group', 'status', 'date', 'update', 'createDate','action']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['id', 'group', 'status', 'date', 'update', 'createDate','action']"></mat-row>
+    </mat-table>
+  </div>
+</div>

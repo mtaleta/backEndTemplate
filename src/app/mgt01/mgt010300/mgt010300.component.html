@@ -1,3 +1,27 @@
-<p>
-  mgt010300 works!
-</p>
+<ol class="breadcrumb">
+  <span>權限管理</span>/
+  <span class="active">群組功能管理 - 群組功能管理</span>
+</ol>
+
+<div class="btn-ft">
+  <button mat-stroked-button color="primary" [routerLink]="[ '.' ]">Edit</button>
+</div>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Function Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cr">
+    <mat-header-cell *matHeaderCellDef> CR Manager </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.cr}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="system">
+    <mat-header-cell *matHeaderCellDef> System Manager </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.system}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['name', 'cr', 'system']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['name', 'cr', 'system']"></mat-row>
+</mat-table>

@@ -1,3 +1,35 @@
-<p>
-  mgt010200 works!
-</p>
+<ol class="breadcrumb">
+  <span>權限管理</span>/
+  <span class="active">群組功能管理 - 功能名稱編輯</span>
+</ol>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Function Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nameEn">
+    <mat-header-cell *matHeaderCellDef> Function Name(English) </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nameEn}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef> Update Date </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="updater">
+    <mat-header-cell *matHeaderCellDef> Updater </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.updater}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-stroked-button color="primary" [routerLink]="[ '.' ]">Change Name</button>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="['name', 'nameEn', 'date', 'updater', 'action']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['name', 'nameEn', 'date', 'updater', 'action']"></mat-row>
+</mat-table>
