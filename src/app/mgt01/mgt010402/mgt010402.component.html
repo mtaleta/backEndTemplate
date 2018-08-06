@@ -1,3 +1,109 @@
-<p>
-  mgt010402 works!
-</p>
+<ol class="breadcrumb">
+  <span>權限管理</span>/
+  <span class="active">人員設定編輯</span>
+</ol>
+<div class="content">
+  <div role="tabpanel" class="tab-pane active" id="coupon02">
+    <div class="text-right btn-ft">
+      <button mat-stroked-button color="primary" [routerLink]="[ '/mgt01/mgt010400' ]">Save</button>
+      <button mat-stroked-button color="primary" [routerLink]="[ '/mgt01/mgt010400' ]">Cancel</button>
+    </div>
+    <form [formGroup]="form" novalidate>
+      <table class="table table-striped table-01">
+        <tr>
+          <th>
+            <span class="s">*</span>User ID</th>
+          <td>
+            <mat-form-field class="form-field">
+              <input matInput placeholder="請填入員工編號" formControlName="userId" required>
+              <mat-error>請填入員工編號</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <span class="s">*</span>User Name
+          </th>
+          <td>
+            <mat-form-field class="form-field" [hideRequiredMarker]="true">
+              <input matInput type="text" placeholder="請填入姓名" formControlName="username" required>
+              <mat-error *ngIf="form.get('username').hasError('required')">請填入姓名</mat-error>
+              <mat-error *ngIf="form.get('username').hasError('minlength')">至少輸入10個字吧！</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <span class="s">*</span>Email</th>
+          <td>
+            <mat-form-field class="form-field" [hideRequiredMarker]="true">
+              <input matInput placeholder="請填入Email" required formControlName="email">
+              <mat-error *ngIf="form.get('email').hasError('required')">請填入Email</mat-error>
+              <mat-error *ngIf="form.get('email').hasError('pattern')">請填入正確格式</mat-error>
+
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <span class="s">*</span>User Group</th>
+          <td>
+            <mat-form-field class="form-field" [hideRequiredMarker]="true">
+              <mat-select [(value)]="selected" formControlName="userGroup" required>
+                <mat-option value="">Selection</mat-option>
+                <mat-option value="1">CR Manager</mat-option>
+                <mat-option value="2">客服專員</mat-option>
+                <mat-option value="3">系統審核主管</mat-option>
+                <mat-option value="4">Systen Manager</mat-option>
+              </mat-select>
+              <mat-error>請選擇群組</mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <span class="s">*</span>Status</th>
+          <td>
+            <mat-radio-group formControlName="status" required>
+              <mat-radio-button value="1" color="primary" checked>正常(Active)&nbsp;</mat-radio-button>
+              <mat-radio-button value="2" color="accent">鎖定(Locked)&nbsp;</mat-radio-button>
+            </mat-radio-group>
+          </td>
+        </tr>
+        <tr>
+          <th>Mobile Device Info. for testing notification
+          </th>
+          <td></td>
+        </tr>
+        <tr>
+          <th> Test Device
+          </th>
+          <td>
+            <mat-form-field class="form-field">
+              <input matInput type="text" placeholder="Device Name" formControlName="device">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>Push Token
+          </th>
+          <td>
+            <mat-form-field class="form-field">
+              <input matInput type="text" placeholder="請填入推播碼" formControlName="token">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <th>Mobile Device OS
+          </th>
+          <td>
+            <mat-radio-group formControlName="deviceOS">
+              <mat-radio-button value="1" color="primary" checked>Android&nbsp;</mat-radio-button>
+              <mat-radio-button value="2" color="accent">IOS&nbsp;</mat-radio-button>
+            </mat-radio-group>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

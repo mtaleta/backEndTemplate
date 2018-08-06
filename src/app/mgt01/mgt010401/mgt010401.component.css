@@ -1,7 +1,6 @@
-.btn-ft :first-child {
-  margin-right: 10px;
-}
-
 .form-field{
   width: 400px;
+}
+.btn-ft>button{
+  margin-right: 10px;
 }

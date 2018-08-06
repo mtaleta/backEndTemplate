@@ -49,13 +49,14 @@
             <span class="s">*</span>User Group</th>
           <td>
             <mat-form-field class="form-field" [hideRequiredMarker]="true">
-              <mat-select [(value)]="selected" required>
+              <mat-select [(value)]="selected" formControlName="userGroup" required>
                 <mat-option value="">Selection</mat-option>
                 <mat-option value="1">CR Manager</mat-option>
                 <mat-option value="2">客服專員</mat-option>
                 <mat-option value="3">系統審核主管</mat-option>
                 <mat-option value="4">Systen Manager</mat-option>
               </mat-select>
+              <mat-error>請選擇群組</mat-error>
             </mat-form-field>
           </td>
         </tr>
@@ -63,7 +64,7 @@
           <th>
             <span class="s">*</span>Status</th>
           <td>
-            <mat-radio-group required>
+            <mat-radio-group formControlName="status" required>
               <mat-radio-button value="1" color="primary" checked>正常(Active)&nbsp;</mat-radio-button>
               <mat-radio-button value="2" color="accent">鎖定(Locked)&nbsp;</mat-radio-button>
             </mat-radio-group>
@@ -79,7 +80,7 @@
           </th>
           <td>
             <mat-form-field class="form-field">
-              <input matInput type="text" placeholder="Device Name">
+              <input matInput type="text" placeholder="Device Name" formControlName="device">
             </mat-form-field>
           </td>
         </tr>
@@ -88,7 +89,7 @@
           </th>
           <td>
             <mat-form-field class="form-field">
-              <input matInput type="text" placeholder="請填入推播碼">
+              <input matInput type="text" placeholder="請填入推播碼" formControlName="token">
             </mat-form-field>
           </td>
         </tr>
@@ -96,7 +97,7 @@
           <th>Mobile Device OS
           </th>
           <td>
-            <mat-radio-group>
+            <mat-radio-group formControlName="deviceOS">
               <mat-radio-button value="1" color="primary" checked>Android&nbsp;</mat-radio-button>
               <mat-radio-button value="2" color="accent">IOS&nbsp;</mat-radio-button>
             </mat-radio-group>
