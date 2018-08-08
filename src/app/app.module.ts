@@ -19,6 +19,7 @@ import { Mgt010102Component } from './mgt01/mgt010102/mgt010102.component';
 import { Mgt010103Component } from './mgt01/mgt010103/mgt010103.component';
 import { Mgt010301Component } from './mgt01/mgt010301/mgt010301.component';
 import { AddDialog } from './mgt01/mgt010301/add-dialog.component';
+import { SelectFunComponent } from './mgt01/mgt010301/select-fun/select-fun.component';
 
 
 @NgModule({
@@ -37,14 +38,14 @@ import { AddDialog } from './mgt01/mgt010301/add-dialog.component';
     Mgt010102Component,
     Mgt010103Component,
     Mgt010301Component,
-    AddDialog
+    AddDialog,
+    SelectFunComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ShareModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent],

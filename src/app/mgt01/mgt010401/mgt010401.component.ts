@@ -20,7 +20,7 @@ export class Mgt010401Component implements OnInit {
 
   selected = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     this.form = new FormGroup({
       userId: new FormControl('', Validators.required),
       username: new FormControl('', [Validators.required, Validators.minLength(10)]),

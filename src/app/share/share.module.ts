@@ -3,6 +3,7 @@ import { MatButtonModule, MatMenuModule, MatToolbarModule, MatCardModule, MatFor
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddDialog } from '../mgt01/mgt010301/add-dialog.component';
+import { SelectFunComponent } from '../mgt01/mgt010301/select-fun/select-fun.component';
 
 export const TW_FORMATS = {
   parse: {
@@ -18,26 +19,26 @@ export const TW_FORMATS = {
 
 @NgModule({
   exports: [
-    MatDialogModule,
-    MatGridListModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatTableModule,
-    MatSelectModule,
-    MatRadioModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule,
     MatCheckboxModule,
-    MatInputModule,
     MatDatepickerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatInputModule,
+    MatMenuModule,
     MatMomentDateModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatTableModule,
+    MatToolbarModule,
     ReactiveFormsModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'zh-TW' },
     { provide: MAT_DATE_FORMATS, useValue: TW_FORMATS }
   ],
-  entryComponents: [AddDialog]
+  entryComponents: [AddDialog, SelectFunComponent]
 })
 export class ShareModule { }

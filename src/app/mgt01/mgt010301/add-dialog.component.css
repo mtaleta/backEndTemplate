@@ -1,0 +1,12 @@
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.btnRight {
+  margin-right: 10px;
+}
+
+.mat-dialog-container {
+  border-radius: 4px;
+}
+

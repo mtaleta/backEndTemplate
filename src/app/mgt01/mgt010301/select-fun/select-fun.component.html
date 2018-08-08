@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>
+  Access Assignment
+</h2>
+<mat-form-field>
+  <form [formGroup]="surveyForm" novalidate>
+    <mat-select #selectInterest multiple>
+      <mat-select-trigger>
+        共選擇了 {{ selectInterest?.selected.length }} 項
+      </mat-select-trigger>
+      <mat-optgroup *ngFor="let item of data" [label]="item.title">
+        <mat-option *ngFor="let names of item.name" [value]="names">
+          {{names}}
+        </mat-option>
+      </mat-optgroup>
+    </mat-select>
+  </form>
+</mat-form-field>
+
+
+<section>
+  <mat-checkbox>Checked</mat-checkbox>
+  <mat-checkbox>Indeterminate</mat-checkbox>
+</section>
+<div mat-dialog-actions>
+  <button mat-stroked-button color="primary" class="btnRight" mat-dialog-close>Save</button>
+  <button mat-stroked-button color="primary" mat-dialog-close>Cancel</button>
+</div>

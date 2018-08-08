@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 // 調整時機為invalid + dirty即顯示錯誤訊息
@@ -20,7 +20,7 @@ export class Mgt010402Component implements OnInit {
 
   selected = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     this.form = new FormGroup({
       userId: new FormControl('', Validators.required),
       username: new FormControl('', [Validators.required, Validators.minLength(10)]),

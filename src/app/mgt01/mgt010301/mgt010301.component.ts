@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { MatDialog } from '@angular/material';
-import { AddDialog } from '../mgt010301/add-dialog.component'
+import { MatDialog, MatCheckboxChange } from '@angular/material';
+import { AddDialog } from './add-dialog.component'
+import { SelectFunComponent } from './select-fun/select-fun.component';
 
 // 調整時機為invalid + dirty即顯示錯誤訊息
 export class EarlyErrorStateMatcher implements ErrorStateMatcher {
@@ -21,25 +22,29 @@ export class EarlyErrorStateMatcher implements ErrorStateMatcher {
 export class Mgt010301Component implements OnInit {
   public form: FormGroup;
 
+  selected = '';
+
   constructor(public dialog: MatDialog, private fb: FormBuilder) {
     this.form = new FormGroup({
-      userId: new FormControl('', Validators.required),
-      username: new FormControl('', [Validators.required, Validators.minLength(10)]),
-      email: new FormControl('', [Validators.required, Validators.pattern('^(?=.{3,16}$)[a-z]([\._]?[a-z0-9]+)+$')]),
       userGroup: new FormControl('', Validators.required),
-      status: new FormControl('', Validators.required),
-      device: new FormControl(''),
-      token: new FormControl(''),
-      deviceOS: new FormControl('')
     });
   }
   showAddPostDialog(): void {
     const dialogRef = this.dialog.open(AddDialog, {
       width: '550px',
+      hasBackdrop: true,
+      backdropClass: 'bg',
+    });
+  }
+
+  showSelectFunction(): void {
+    const dialogRef = this.dialog.open(SelectFunComponent, {
+      width: '550px',
+      hasBackdrop: true,
+      backdropClass: 'bg',
     });
   }
 
   ngOnInit() {
   }
-
 }

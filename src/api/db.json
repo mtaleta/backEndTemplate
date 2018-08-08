@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Access Control",
+    "name": "Group management"
+  },
+  {
+    "title": "Access Control",
+    "name": "Group function management - Function name editor"
+  },
+  {
+    "title": "Access Control",
+    "name": "Group function management"
+  },
+  {
+    "title": "Access Control",
+    "name": "Personal setting"
+  },
+  {
+    "title": "Push platform",
+    "name": "APP Set up"
+  },
+  {
+    "title": "Push platform",
+    "name": "Channel Set up"
+  },
+  {
+    "title": "Push platform",
+    "name": "API Set up"
+  },
+  {
+    "title": "Notificatin",
+    "name": "Notificatin Set Up"
+  },
+  {
+    "title": "Marketing Message",
+    "name": "Import Marketing Customer List"
+  },
+  {
+    "title": "Marketing Message",
+    "name": "Marketing Message Establishment"
+  },
+  {
+    "title": "Marketing Message",
+    "name": "Marketing Message Inquiry"
+  },
+  {
+    "title": "Marketing Message",
+    "name": "Marketing Message Approval"
+  },
+  {
+    "title": "Marketing Message",
+    "name": "Marketing Message History Records Inquiry"
+  }
+]
