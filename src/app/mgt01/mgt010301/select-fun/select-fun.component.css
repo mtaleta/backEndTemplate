@@ -1,0 +1,20 @@
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.btnRight {
+  margin-right: 10px;
+}
+
+.mat-dialog-container {
+  border-radius: 4px;
+}
+
+.btmSli {
+  border-bottom: 2px solid #ddd;
+}
+
+.names{
+  text-align: left;
+}
+

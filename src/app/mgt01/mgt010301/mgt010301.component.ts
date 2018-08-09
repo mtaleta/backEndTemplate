@@ -39,7 +39,7 @@ export class Mgt010301Component implements OnInit {
 
   showSelectFunction(): void {
     const dialogRef = this.dialog.open(SelectFunComponent, {
-      width: '550px',
+      width: '650px',
       hasBackdrop: true,
       backdropClass: 'bg',
     });

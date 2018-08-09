@@ -1,11 +1,11 @@
 <h2 mat-dialog-title>
   Access Assignment
 </h2>
-<mat-form-field>
+<!-- <mat-form-field>
   <form [formGroup]="surveyForm" novalidate>
     <mat-select #selectInterest multiple>
       <mat-select-trigger>
-        共選擇了 {{ selectInterest?.selected.length }} 項
+        共選擇了 {{ selectInterest.selected.length }} 項
       </mat-select-trigger>
       <mat-optgroup *ngFor="let item of data" [label]="item.title">
         <mat-option *ngFor="let names of item.name" [value]="names">
@@ -14,13 +14,43 @@
       </mat-optgroup>
     </mat-select>
   </form>
-</mat-form-field>
+</mat-form-field> -->
+<form [formGroup]="selectFunForm">
+  <div mat-dialog-content>
+    <div mat-form-field>
+      <mat-grid-list cols="8" rowHeight="30px">
+        <mat-grid-tile colspan="6" class="btmSli">
+          Function Name
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" class="btmSli">
+          Check/UnCheck
+        </mat-grid-tile>
+        <span *ngFor="let item of data">
+          <mat-grid-tile colspan="6" rowspan="1" style="background: #d9edf7;">
+            {{item.title}}
+          </mat-grid-tile>
+          <mat-grid-tile colspan="2" rowspan="1" style="background: #d9edf7;">
+          </mat-grid-tile>
+          <span *ngFor="let names of item.name">
+            <mat-grid-tile colspan="6" rowspan="2">
+              <span class="names">{{names}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="2">
+              <mat-checkbox value="{{names}}" color="primary"></mat-checkbox>
+            </mat-grid-tile>
+          </span>
+        </span>
+      </mat-grid-list>
+      <!-- <section>
+        <mat-checkbox formControlName="payForAll" >全部</mat-checkbox>
+        <mat-checkbox formControlName="payForBook" color="primary">書籍</mat-checkbox>
+        <mat-checkbox formControlName="payForMusic" color="accent">音樂</mat-checkbox>
+        <mat-checkbox formControlName="payForMovie" color="warn">電影</mat-checkbox>
+      </section> -->
+    </div>
+  </div>
+</form>
 
-
-<section>
-  <mat-checkbox>Checked</mat-checkbox>
-  <mat-checkbox>Indeterminate</mat-checkbox>
-</section>
 <div mat-dialog-actions>
   <button mat-stroked-button color="primary" class="btnRight" mat-dialog-close>Save</button>
   <button mat-stroked-button color="primary" mat-dialog-close>Cancel</button>
