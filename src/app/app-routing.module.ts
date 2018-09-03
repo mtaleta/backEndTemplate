@@ -13,6 +13,7 @@ import { Mgt010301Component } from './mgt01/mgt010301/mgt010301.component';
 import { Mgt010101Component } from './mgt01/mgt010101/mgt010101.component';
 import { Mgt010102Component } from './mgt01/mgt010102/mgt010102.component';
 import { Mgt010103Component } from './mgt01/mgt010103/mgt010103.component';
+import { Mgt02Component } from './mgt02/mgt02.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -32,7 +33,8 @@ const routes: Routes = [
       { path: 'mgt010402', component: Mgt010402Component },
     ]
   },
-  { path: 'unclock', component: UnclockComponent },
+  { path: 'mgt02', component: Mgt02Component },
+  { path: 'unclock', component: UnclockComponent }
 ];
 
 @NgModule({
