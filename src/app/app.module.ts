@@ -24,6 +24,7 @@ import { Mgt02Component } from './mgt02/mgt02.component';
 
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { MgtComponent } from './mgt/mgt.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { HttpModule } from '@angular/http';
     Mgt02Component,
     AddDialog,
     SelectFunComponent,
-    Mgt02Component
+    MgtComponent
   ],
   imports: [
     BrowserModule,

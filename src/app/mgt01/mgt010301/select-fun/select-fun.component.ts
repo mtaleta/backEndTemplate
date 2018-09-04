@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_CHECKBOX_CLICK_ACTION, MatCheckboxChange } from '@angular/material';
 import { Observable } from '../../../../../node_modules/rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
+import { DataService } from '../../../data.service';
 
 @Component({
   selector: 'app-select-fun',
@@ -16,8 +17,7 @@ export class SelectFunComponent implements OnInit {
 
   selectFunForm: FormGroup;
 
-
-  constructor() {
+  constructor(public datasvc: DataService) {
     this.selectFunForm = new FormGroup({
       payForAll: new FormControl(false),
       payForBook: new FormControl(false),
@@ -26,42 +26,7 @@ export class SelectFunComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
-
-
-  data = [
-    {
-      "title": "Access Control",
-      "name": [
-        "Group management",
-        "Group function management - Function name editor",
-        "Group function management",
-        "Personal setting"
-      ]
-    },
-    {
-      "title": "Push platform",
-      "name": [
-        "APP Set up",
-        "Channel Set up",
-        "API Set up"
-      ]
-    },
-    {
-      "title": "Notificatin",
-      "name": [
-        "Notificatin Set Up"
-      ]
-    },
-    {
-      "title": "Marketing Message",
-      "name": [
-        "Import Marketing Customer List",
-        "Marketing Message Establishment",
-        "Marketing Message Inquiry",
-        "Marketing Message Approval",
-        "Marketing Message History Records Inquiry"
-      ]
-    }
-  ];
+  ngOnInit() {
+    this.data$ = this.datasvc.getData()
+  }
 }

@@ -14,6 +14,7 @@ import { Mgt010101Component } from './mgt01/mgt010101/mgt010101.component';
 import { Mgt010102Component } from './mgt01/mgt010102/mgt010102.component';
 import { Mgt010103Component } from './mgt01/mgt010103/mgt010103.component';
 import { Mgt02Component } from './mgt02/mgt02.component';
+import { MgtComponent } from './mgt/mgt.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'mgt010402', component: Mgt010402Component },
     ]
   },
+  { path: 'mgt', component: MgtComponent },
   { path: 'mgt02', component: Mgt02Component },
   { path: 'unclock', component: UnclockComponent }
 ];

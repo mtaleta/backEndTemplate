@@ -40,4 +40,64 @@ export class Mgt010200Component implements OnInit {
   ngOnInit() {
   }
 
+  data = [
+    {
+      "title": "Access Control",
+      "titleTw": "權限管理",
+      "name": [
+        "Group management",
+        "Group function management - Function name editor",
+        "Group function management",
+        "Personal setting"
+      ],
+      "nameTw": [
+        "人員群組管理",
+        "群組功能管理-功能名稱編輯",
+        "群組功能管理-群組功能管理",
+        "人員設定"
+      ]
+    },
+    {
+      "title": "Push platform",
+      "titleTw": "推播平台管理",
+      "name": [
+        "APP Set up",
+        "Channel Set up",
+        "API Set up"
+      ],
+      "nameTw": [
+        "App 設定",
+        "Channel 設定",
+        "Api 設定"
+      ]
+    },
+    {
+      "title": "Notificatin",
+      "titleTw": "通知項目管理",
+      "name": [
+        "Notificatin Set Up"
+      ],
+      "nameTw": [
+        "通知項目設定"
+      ]
+    },
+    {
+      "title": "Marketing Message",
+      "titleTw": "行銷通知",
+      "name": [
+        "Import Marketing Customer List",
+        "Marketing Message Establishment",
+        "Marketing Message Inquiry",
+        "Marketing Message Approval",
+        "Marketing Message History Records Inquiry"
+      ],
+      "nameTw": [
+        "行銷通知名單匯入",
+        "行銷通知建立",
+        "行銷通知查詢",
+        "行銷通知審核",
+        "行銷通知歷史資料查詢"
+      ]
+    }
+  ];
 }

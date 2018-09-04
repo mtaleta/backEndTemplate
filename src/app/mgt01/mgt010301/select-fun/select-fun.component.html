@@ -25,7 +25,7 @@
         <mat-grid-tile colspan="2" class="btmSli">
           Check/UnCheck
         </mat-grid-tile>
-        <span *ngFor="let item of data">
+        <span *ngFor="let item of data$|async">
           <mat-grid-tile colspan="6" rowspan="1" style="background: #d9edf7;">
             {{item.title}}
           </mat-grid-tile>
